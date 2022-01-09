@@ -22,6 +22,11 @@ public class ProductController {
         this.productService = productService;
     }
 
+    /**
+     * This is Product controller for creating getting a product.
+     * @param id Path variable to find the product
+     * @return Found product
+     */
     @GetMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Product getProduct(@PathVariable("id") Long id){
@@ -29,6 +34,12 @@ public class ProductController {
                 " not found!"));
     }
 
+    /**
+     *  This is Product controller for creating new product.
+     * @param product Valid product from JSON request  body
+     * @param errors for invalid product JSON request body
+     * @return saved Product
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product saveProduct(@RequestBody @Valid Product product, Errors errors){
@@ -43,6 +54,10 @@ public class ProductController {
         return productService.saveProduct(product);
     }
 
+    /**
+     * This is a Product controller for deleting a product
+     * @param id Path variable to find the product to delete
+     */
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProduct(@PathVariable("id") Long id){

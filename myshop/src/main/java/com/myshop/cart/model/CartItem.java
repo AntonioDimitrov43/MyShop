@@ -17,11 +17,11 @@ public class CartItem {
     private Long id;
 
     @NotNull(message = "Product is mandatory!")
-    @ManyToOne(targetEntity = Product.class, cascade = CascadeType.REFRESH)
+    @ManyToOne(targetEntity = Product.class)
     private Product product;
 
     @NotNull(message = "User is mandatory")
-    @ManyToOne(targetEntity = User.class, cascade = CascadeType.REMOVE)
+    @ManyToOne(targetEntity = User.class)
     private User user;
 
     @NotNull(message = "Quantity is mandatory")

@@ -30,7 +30,7 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public List<CartItem> getCart(String username) {
+    public List<CartItem> getCartForUser(String username) {
         if (username == null || username.isBlank()) {
             throw new IllegalArgumentException("Username cannot be blank and null!");
         }
@@ -56,9 +56,26 @@ public class CartItemServiceImpl implements CartItemService {
 
         cartItem.setUser(userRepository.getByUsername(cartItem.getUser().getUsername()));
 
+
         productService.removeQuantity(cartItem.getQuantity(), cartItem.getProduct().getId());
 
         return cartItemRepository.save(cartItem);
 
     }
+
+    @Override
+    public void moveToOrderEntryByUsername(String username) {
+        if(username == null || username.isBlank()){
+            throw new IllegalArgumentException("Username is mandatory and cannot be blank!");
+        }
+        if (!userRepository.existsByUsername(username)){
+            throw new ElementNotFoundException("User with username = " + username + " not found!");
+        }
+        List<CartItem> cartItems = cartItemRepository.findAll();
+
+        cartItems.stream()
+                .filter(item -> item.getUser().getUsername().equals(username))
+                .forEach(item -> cartItemRepository.deleteById(item.getId()));
+    }
+
 }

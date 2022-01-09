@@ -7,7 +7,10 @@ import java.util.List;
 public interface CartItemService {
 
 
-    List<CartItem> getCart(String username);
+    List<CartItem> getCartForUser(String username);
 
     CartItem saveCartItem(CartItem cartItem);
+
+
+    void moveToOrderEntryByUsername(String username);
 }

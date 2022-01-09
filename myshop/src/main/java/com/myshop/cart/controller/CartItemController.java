@@ -1,7 +1,6 @@
 package com.myshop.cart.controller;
 
 import com.myshop.cart.model.CartItem;
-import com.myshop.cart.repository.CartItemRepository;
 import com.myshop.cart.service.CartItemService;
 import com.myshop.exceptions.BadRequestContentException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/cartitem")
 public class CartItemController {
 
+
     private final CartItemService cartItemService;
 
     @Autowired
@@ -26,7 +26,7 @@ public class CartItemController {
     @GetMapping(path = "/{username}")
     @ResponseStatus(HttpStatus.OK)
     public List<CartItem> getCart(@PathVariable("username") String username){
-        return cartItemService.getCart(username);
+        return cartItemService.getCartForUser(username);
     }
 
     @PostMapping

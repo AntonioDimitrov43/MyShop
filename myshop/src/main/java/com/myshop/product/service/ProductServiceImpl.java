@@ -23,6 +23,11 @@ public class ProductServiceImpl implements ProductService{
     }
 
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Optional<Product> getProduct(Long id) {
         if (id == null || id < 0){
