@@ -2,8 +2,7 @@ package com.myshop.cart.service;
 
 import com.myshop.cart.model.CartItem;
 import com.myshop.cart.repository.CartItemRepository;
-import com.myshop.exceptions.ElementNotFoundException;
-import com.myshop.product.model.Product;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.product.repository.ProductRepository;
 import com.myshop.product.service.ProductService;
 import com.myshop.user.repository.UserRepository;
@@ -29,6 +28,11 @@ public class CartItemServiceImpl implements CartItemService {
         this.productService = productService;
     }
 
+    /**
+     * Checks and finds all cart items assigned to a valid username if such a username exists
+     * @param username not null or blank username
+     * @return List of all found cart items
+     */
     @Override
     public List<CartItem> getCartForUser(String username) {
         if (username == null || username.isBlank()) {
@@ -42,6 +46,11 @@ public class CartItemServiceImpl implements CartItemService {
 
     }
 
+    /**
+     * If person with username and specific product exist it adds them to the cart list.
+     * @param cartItem not null cart item
+     * @return Lowers product amount in the system and adds a cart item to the list and assigns the username to it
+     */
     @Override
     public CartItem saveCartItem(CartItem cartItem) {
         if (cartItem == null) {
@@ -63,6 +72,10 @@ public class CartItemServiceImpl implements CartItemService {
 
     }
 
+    /**
+     * Sends all carts items, that specific user with existing username has in their cart, to the order entry.
+     * @param username not null and not blank username
+     */
     @Override
     public void moveToOrderEntryByUsername(String username) {
         if(username == null || username.isBlank()){

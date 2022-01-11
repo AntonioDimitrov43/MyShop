@@ -19,7 +19,11 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserRepository userRepository;
 
 
-
+    /**
+     * @param username  valid username
+     * @return found user details
+     * @throws UsernameNotFoundException throws if the username cannot be found
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findById(username);

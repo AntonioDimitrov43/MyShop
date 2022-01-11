@@ -66,146 +66,74 @@ public class User {
         this.deliveryPreferences = deliveryPreferences;
     }
 
-    /**
-     * Returns user's username
-     * @return found user's username
-     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * Sets user's username
-     * @param username valid username
-     */
     public void setUsername(String username) {
         this.username = username;
     }
 
-    /**
-     * Gets user ID
-     * @return user ID
-     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * Sets user ID
-     * @param id valid ID
-     */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * Returns user's name
-     * @return found user's name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets user's name
-     * @param name not null or blank
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Returns password
-     * @return found valid password
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * Sets user's password
-     * @param password valid password
-     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-    /**
-     * Returns user status
-     * @return found user status
-     */
     public UserStatus getStatus() {
         return status;
     }
 
-    /**
-     * Sets user status
-     * @param status found valid status
-     */
     public void setStatus(UserStatus status) {
         this.status = status;
     }
 
-    /**
-     * Returns user's email
-     * @return found user's email
-     */
     public String getEmail() {
         return email;
     }
 
-    /**
-     * Sets user's email
-     * @param email valid email
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     * Returns user's phone number
-     * @return found user's phone number
-     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    /**
-     * Sets user's phone number
-     * @param phoneNumber valid phone number
-     */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    /**
-     * Returns user's address
-     * @return found user's address
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * Sets user's address
-     * @param address valid address
-     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /**
-     * Returns user's delivery preferences
-     * @return found user's delivery preferences
-     */
     public String getDeliveryPreferences() {
         return deliveryPreferences;
     }
 
-    /**
-     * Sets user's delivery preferences
-     * @param deliveryPreferences valid delivery preferences
-     */
     public void setDeliveryPreferences(String deliveryPreferences) {
         this.deliveryPreferences = deliveryPreferences;
     }

@@ -1,8 +1,8 @@
 package com.myshop.product.service;
 
-import com.myshop.exceptions.BadDeleteRequestException;
-import com.myshop.exceptions.BadIdException;
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.BadDeleteRequestException;
+import com.myshop.security.exceptions.BadIdException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.product.model.Product;
 import com.myshop.product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +24,9 @@ public class ProductServiceImpl implements ProductService{
 
 
     /**
-     *
-     * @param id
-     * @return
+     * Acquires product according to id.
+     * @param id not null and positive id
+     * @return found product
      */
     @Override
     public Optional<Product> getProduct(Long id) {
@@ -37,6 +37,11 @@ public class ProductServiceImpl implements ProductService{
         return productRepository.findById(id);
     }
 
+    /**
+     * Saves product to the repo.
+     * @param product not null product
+     * @return saves product
+     */
     @Override
     public Product saveProduct(Product product) {
         if (product == null){
@@ -46,6 +51,10 @@ public class ProductServiceImpl implements ProductService{
         return productRepository.save(product);
     }
 
+    /**
+     * Deletes product from the repo by id.
+     * @param id not null and positive id
+     */
     @Override
     public void deleteProduct(Long id)
     {
@@ -60,6 +69,11 @@ public class ProductServiceImpl implements ProductService{
         }
     }
 
+    /**
+     * Removes a certain quantity of a product from the repo and saves the changes to the product information
+     * @param quantity not null and positive quantity
+     * @param productCode not null and positive product code
+     */
     @Override
     public void removeQuantity(int quantity, Long productCode) {
 

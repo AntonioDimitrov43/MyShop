@@ -1,7 +1,7 @@
 package com.myshop.order.controller;
 
-import com.myshop.exceptions.BadRequestContentException;
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.BadRequestContentException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.order.model.Orders;
 import com.myshop.order.service.interfaces.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.myshop.order.service;
 
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.order.model.OrderEntry;
 import com.myshop.order.repository.OrderEntryRepository;
 import com.myshop.order.repository.OrderRepository;

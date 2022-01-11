@@ -2,8 +2,8 @@ package com.myshop.order.service;
 
 import com.myshop.cart.model.CartItem;
 import com.myshop.cart.service.CartItemServiceImpl;
-import com.myshop.exceptions.BadIdException;
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.BadIdException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.order.model.Orders;
 import com.myshop.order.model.OrderEntry;
 import com.myshop.order.model.enums.OrderStatus;

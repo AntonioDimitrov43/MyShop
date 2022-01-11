@@ -25,6 +25,11 @@ public class SearchController {
         this.productSearchService = productSearchService;
     }
 
+    /**
+     * Finds all products which match criteria
+     * @param criteria Criteria from JSON request body
+     * @return all products found by criteria
+     */
     @GetMapping
     public List<Product> findByCriteria(@RequestBody ProductSearchCriteria criteria){
 

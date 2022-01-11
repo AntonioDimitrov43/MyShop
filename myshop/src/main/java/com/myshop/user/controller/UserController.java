@@ -1,7 +1,7 @@
 package com.myshop.user.controller;
 
-import com.myshop.exceptions.BadRequestContentException;
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.BadRequestContentException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.user.helper.ChangePassHelper;
 import com.myshop.user.model.User;
 import com.myshop.user.service.interfaces.UserService;
@@ -54,6 +54,13 @@ public class UserController {
 
         return userService.saveUser(user);
     }
+
+    /**
+     * This is a User controller used for changing the user's password
+     * @param passHelper basic body when changing the password
+     * @param errors for invalid password helper JSON request body
+     * @return changed password
+     */
     @PatchMapping(path = "/password")
     @ResponseStatus(HttpStatus.CREATED)
     public User changePassword(@RequestBody @Valid ChangePassHelper passHelper, Errors errors){

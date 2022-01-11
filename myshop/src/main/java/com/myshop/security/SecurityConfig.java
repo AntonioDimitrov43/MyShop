@@ -21,6 +21,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);
     }
 
+    /**
+     * Configures authority
+     * @param http variable used to set the authority
+     * @throws Exception handles any exceptions
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -37,6 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .logout();
     }
 
+    /**
+     * Encodes the given password by a specific method
+     * @return encoded password
+     */
     @Bean
     public PasswordEncoder encoder(){
         return new BCryptPasswordEncoder();

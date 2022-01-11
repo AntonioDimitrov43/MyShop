@@ -1,7 +1,7 @@
 package com.myshop.product.controller;
 
-import com.myshop.exceptions.BadRequestContentException;
-import com.myshop.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.BadRequestContentException;
+import com.myshop.security.exceptions.ElementNotFoundException;
 import com.myshop.product.model.Product;
 import com.myshop.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

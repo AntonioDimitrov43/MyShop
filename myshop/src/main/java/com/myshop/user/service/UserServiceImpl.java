@@ -1,7 +1,7 @@
 package com.myshop.user.service;
 
-import com.myshop.exceptions.ElementNotFoundException;
-import com.myshop.exceptions.IncorrectPasswordException;
+import com.myshop.security.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.IncorrectPasswordException;
 import com.myshop.user.helper.ChangePassHelper;
 import com.myshop.user.model.User;
 import com.myshop.user.repository.UserRepository;
@@ -62,6 +62,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
+    /**
+     * This is a user service method used for changing a user's password
+     * @param passHelper valid not null password body used when changing passwords
+     * @return saved new encoded password
+     */
     @Override
     public User changePassword(ChangePassHelper passHelper) {
         if (passHelper == null){

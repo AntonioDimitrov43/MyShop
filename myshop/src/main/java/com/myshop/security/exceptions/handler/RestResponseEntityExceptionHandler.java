@@ -1,9 +1,9 @@
-package com.myshop.exceptions.handler;
+package com.myshop.security.exceptions.handler;
 
-import com.myshop.exceptions.BadIdException;
-import com.myshop.exceptions.BadRequestContentException;
-import com.myshop.exceptions.ElementNotFoundException;
-import com.myshop.exceptions.IncorrectPasswordException;
+import com.myshop.security.exceptions.BadIdException;
+import com.myshop.security.exceptions.BadRequestContentException;
+import com.myshop.security.exceptions.ElementNotFoundException;
+import com.myshop.security.exceptions.IncorrectPasswordException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

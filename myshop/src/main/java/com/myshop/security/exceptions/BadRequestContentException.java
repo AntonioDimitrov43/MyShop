@@ -1,4 +1,4 @@
-package com.myshop.exceptions;
+package com.myshop.security.exceptions;
 
 public class BadRequestContentException extends RuntimeException{
 
